@@ -1,0 +1,13 @@
+:root {
+    --space-black: #020617;
+    --ars-orange: #f97316;
+    --panel-glass: rgba(15, 23, 42, 0.7);
+}
+
+body {
+    background-color: var(--space-black);
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }

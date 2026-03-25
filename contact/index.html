@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inquiry | ArsUltra // Access Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap');
+    :root { --space-black: #020617; }
+    body { background-color: var(--space-black); font-family: 'Inter', sans-serif; color: #f1f5f9; overflow-x: hidden; }
+    .mono { font-family: 'Roboto Mono', monospace; }
+    .bg-grid { background-size: 60px 60px; background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px); }
+    .glass-card { background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .text-outline { -webkit-text-stroke: 1px rgba(255,255,255,0.1); color: transparent; }
+  </style>
+</head>
+<body class="bg-grid">
+<nav id="global-nav"></nav>
+
+<main class="pt-40 pb-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-32">
+        <div>
+            <div class="mono text-[10px] text-orange-500 mb-6 tracking-[0.5em] uppercase font-bold italic animate-pulse contact-status">Establishing Connection...</div>
+            <h1 class="text-7xl font-black mb-12 tracking-tighter uppercase italic contact-title">Contact</h1>
+            <p class="text-slate-400 text-xl font-light mb-16 leading-relaxed contact-desc">
+                Connect with our mission control. For rad-hard systems, custom spacecraft buses, or high-reliability industrial inquiries.
+            </p>
+
+            <form class="space-y-12">
+                <div class="relative">
+                    <label class="block mono text-[9px] text-slate-500 uppercase tracking-widest mb-4 contact-label">Origin [Name]</label>
+                    <input type="text" required class="w-full bg-transparent border-b border-white/10 py-4 text-xl text-white focus:border-orange-500 outline-none transition uppercase tracking-tighter font-black italic" placeholder="Operator Name">
+                </div>
+                <div class="relative">
+                    <label class="block mono text-[9px] text-slate-500 uppercase tracking-widest mb-4 contact-label">Signal [Email]</label>
+                    <input type="email" required class="w-full bg-transparent border-b border-white/10 py-4 text-xl text-white focus:border-orange-500 outline-none transition uppercase tracking-tighter font-black italic" placeholder="comm-channel@domain.com">
+                </div>
+                <div class="relative">
+                    <label class="block mono text-[9px] text-slate-500 uppercase tracking-widest mb-4 contact-label">Data Payload [Message]</label>
+                    <textarea required rows="4" class="w-full bg-transparent border-b border-white/10 py-4 text-xl text-white focus:border-orange-500 outline-none transition uppercase tracking-tighter font-black italic resize-none" placeholder="Message content..."></textarea>
+                </div>
+                <button type="submit" class="group flex items-baseline gap-6 text-white hover:text-orange-500 transition-colors">
+                    <span class="text-4xl font-black uppercase italic tracking-tighter transmit-text">Transmit Inquiry</span>
+                    <span class="text-2xl group-hover:translate-x-4 transition-transform duration-500">→</span>
+                </button>
+            </form>
+        </div>
+
+        <div class="space-y-20">
+            <div class="relative group">
+                <div class="absolute inset-0 bg-orange-500/10 blur-[80px] group-hover:bg-orange-500/20 transition-all duration-700"></div>
+                <div class="relative rounded-3xl overflow-hidden border border-white/5 shadow-2xl">
+                    <img src="/mapb.jpg" alt="Office Location" class="w-full grayscale group-hover:grayscale-0 transition duration-700 opacity-60 group-hover:opacity-100">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-white/5 pt-12">
+                <div>
+                    <h3 class="mono text-[10px] text-orange-500 uppercase tracking-[0.4em] font-bold italic mb-6 location-title">Location</h3>
+                    <p class="text-sm text-slate-400 mono tracking-widest uppercase leading-loose">
+                        G.M. de Jovellanos 1425 Dto.9<br>
+                        CABA - C.P: 1269, Bs. As.<br>
+                        Argentina
+                    </p>
+                </div>
+                <div>
+                    <h3 class="mono text-[10px] text-orange-500 uppercase tracking-[0.4em] font-bold italic mb-6 channels-title">Channels</h3>
+                    <p class="text-sm text-slate-400 mono tracking-widest uppercase leading-loose">
+                        +54 (11) 4301-4988<br>
+                        <a href="mailto:info@arsultra.com.ar" class="text-white hover:text-orange-500 transition">info@arsultra.com.ar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</main>
+
+<footer id="global-footer"></footer>
+
+<script type="module" src="/src/pages/contact-logic.ts"></script>
+</body>
+</html>

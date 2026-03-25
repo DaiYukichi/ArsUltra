@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArsUltra | Orbital Precision Engineering</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap');
+
+    :root {
+      --space-black: #020617;
+      --titanium: #94a3b8;
+      --hi-vis-orange: #f97316;
+    }
+
+    body {
+      background-color: var(--space-black);
+      font-family: 'Inter', sans-serif;
+      color: #f1f5f9;
+      overflow-x: hidden;
+    }
+
+    .mono { font-family: 'Roboto Mono', monospace; }
+
+    /* Technical Grid Overlay Effect */
+    .bg-grid {
+      background-size: 60px 60px;
+      background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+    }
+
+    .glow-orange { filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.5)); }
+    .glow-blue { filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5)); }
+
+    /* Glassmorphic Cards */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="bg-grid">
+
+<nav id="global-nav"></nav>
+
+<main>
+  <!-- Immersive Hero -->
+  <section class="min-h-screen flex flex-col justify-center items-center px-6 relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+        <img src="/images/hero-sunrise.jpg" class="w-full h-full object-cover opacity-30">
+        <div class="absolute inset-0 bg-gradient-to-b from-space-black via-transparent to-space-black"></div>
+    </div>
+    
+    <div class="text-center group relative z-10">
+        <div class="mono text-[10px] text-orange-500 tracking-[0.5em] uppercase mb-8 opacity-60 animate-pulse status-text">
+            SYSTEM STATUS: NOMINAL // EST. 2011
+        </div>
+        
+        <img src="/logo.png" alt="ArsUltra" class="h-16 md:h-24 mx-auto mb-12 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] transition-transform duration-700 group-hover:scale-105">
+        
+        <h1 class="text-3xl md:text-5xl font-black mb-8 tracking-tighter uppercase max-w-2xl leading-none">
+            High Reliability <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-slate-600 italic font-bold">Orbital Engineering</span>
+        </h1>
+        
+        <p class="text-slate-500 mono text-xs uppercase tracking-[0.2em] max-w-xl mx-auto mb-16 leading-loose opacity-80 hero-tagline">
+            A high reliability company for a better world where to live.
+        </p>
+
+        <a href="#products" class="group flex flex-col items-center gap-4">
+            <span class="mono text-[9px] text-slate-400 tracking-widest uppercase group-hover:text-white transition scroll-text">Scroll to Explore</span>
+            <div class="w-px h-20 bg-gradient-to-b from-orange-500 to-transparent"></div>
+        </a>
+    </div>
+  </section>
+
+  <!-- Product Modules -->
+  <section id="products" class="max-w-7xl mx-auto px-6 py-32">
+    <div class="flex items-baseline justify-between mb-24 border-b border-white/5 pb-8">
+      <div>
+        <h2 class="text-4xl font-black uppercase tracking-tighter italic systems-title">Systems</h2>
+        <span class="mono text-[10px] text-slate-500 uppercase tracking-widest mt-2 block proven-text">Flight Proven Heritage</span>
+      </div>
+      <a href="/systems/" class="mono text-[10px] text-orange-500 border border-orange-500/20 px-6 py-2 rounded-full hover:bg-orange-500 hover:text-white transition uppercase font-bold tracking-widest catalog-btn">Full Catalog</a>
+    </div>
+
+    <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Rendered by src/main.ts -->
+    </div>
+  </section>
+
+  <!-- Heritage Timeline (Vertical) -->
+  <section id="heritage" class="max-w-4xl mx-auto px-6 py-32">
+    <div class="text-center mb-24">
+        <h2 class="text-3xl font-bold uppercase tracking-tighter italic mb-4 text-white heritage-title">Flight Heritage</h2>
+        <div class="h-1 w-20 bg-orange-500 mx-auto"></div>
+    </div>
+    
+    <div id="heritage-timeline" class="space-y-0">
+        <!-- Vertical Timeline Logic in src/main.ts -->
+    </div>
+  </section>
+</main>
+
+<footer id="global-footer"></footer>
+
+<script type="module" src="/src/pages/main.ts"></script>
+</body>
+</html>

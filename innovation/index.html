@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Innovation | ArsUltra // Technical Excellence</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap');
+    :root { --space-black: #020617; }
+    body { background-color: var(--space-black); font-family: 'Inter', sans-serif; color: #f1f5f9; overflow-x: hidden; }
+    .mono { font-family: 'Roboto Mono', monospace; }
+    .bg-grid { background-size: 60px 60px; background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px); }
+    .glass-card { background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .text-outline { -webkit-text-stroke: 1px rgba(255,255,255,0.1); color: transparent; }
+  </style>
+</head>
+<body class="bg-grid">
+<nav id="global-nav"></nav>
+
+<main class="pt-40 pb-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-32 relative">
+        <div class="absolute -top-20 left-1/2 -translate-x-1/2 text-9xl font-black text-outline uppercase select-none pointer-events-none italic capabilities-title">Capabilities</div>
+        <div class="relative z-10">
+            <h1 class="text-7xl font-black mb-8 tracking-tighter uppercase italic excellence-title">Technical Excellence</h1>
+            <p class="text-orange-500 mono text-sm tracking-[0.5em] uppercase font-bold italic mb-12 innovation-tagline">R&D+i Capability</p>
+            <p class="text-slate-400 text-xl max-w-2xl mx-auto leading-relaxed font-light innovation-desc">
+                Advanced modeling, simulation, and high-reliability engineering for the most extreme mission profiles.
+            </p>
+        </div>
+    </div>
+
+    <div id="capabilities-grid" class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Injected by innovation-logic.ts -->
+    </div>
+  </div>
+</main>
+
+<footer id="global-footer"></footer>
+
+<script type="module" src="/src/pages/innovation-logic.ts"></script>
+</body>
+</html>

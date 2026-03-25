@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+html, body{margin:0px;padding:0px;height:100%;width:100%;}
+body {background-color:transparent;}
+.backimg {
+  background: linear-gradient(#111,#3b465e, #111) no-repeat center center fixed, url('fotos/flyang2.html') no-repeat center center fixed;/*#212121*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 5000;
+}
+#section {height:100%;}
+/* #cssmenu a {
+  color:#757575;
+  font-weight: bold;
+}*/
+.center-sep{
+  margin-left: 30px;
+}
+.wtxt {
+  font-style: italic;
+  color: #ffffff;
+ }
+ .ns {
+  user-select: none;
+ }
+ .ptitle {
+  color:#3F729B;
+  font-weight: bold;
+  font-style: italic;
+}
+.psubtitle {
+  color:#01579b;
+  font-weight: bold;
+  font-style: italic;
+}
+a:link {color: #fff;}
+a:hover {color: rgb(110, 209, 255);}
+a:active {color: rgb(0, 134, 223);}
+a:visited {color: rgb(57, 91, 131);}
+.contorno{ 
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #111;
+}
+.contorno-fino{ 
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #111;
+}
+.negrita {
+  font-weight: bold;
+}
+.vf{
+  background-color:#003264;
+  color:#fff;
+}

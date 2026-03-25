@@ -1,0 +1,133 @@
+<!doctype html>
+<html class="backimg">
+	
+<!-- Mirrored from www.arsultra.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Mar 2026 23:31:24 GMT -->
+<head>
+		<meta charset="utf-8">
+		<title>ArsUltra</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"> 
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+      .nav-grad {
+        background-color:transparent;
+        /* background-image: linear-gradient(#283593,#4fc3f7, #1565c0); */
+      }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130109256-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-130109256-1');
+    </script>
+	</head>
+	<body>
+		<div class="container-fluid h-100">
+      <!-- Navbar -->
+      <nav class="navbar fixed-top navbar-dark navbar-expand-sm nav-grad z-depth-0" id="cssmenu">
+        <!-- Navbar brand -->
+        <a class="navbar-brand disabled p-0 m-0" href="#" style="font-family: 'Orbitron', sans-serif; font-weight: bold;">
+          	<img class="ns"src="logo-h50.png" width="133" height="26" alt="ArsUltra"/></a>
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <!-- agregar class active -->
+            <a class="nav-link" href="homeb.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="company" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Company</a>
+            <div class="dropdown-menu dropdown-primary pb-0" id="company-menu" aria-labelledby="company">
+              <a class="dropdown-item" href="business.html">Business</a>
+              <a class="dropdown-item" href="identidad.html">Identidad</a>
+              <a class="dropdown-item" href="filosofia.html">Filosofia</a>
+            </div>
+          </li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="products" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Products</a>
+            <div class="dropdown-menu dropdown-primary pb-0" id="products-menu" aria-labelledby="products">
+              <!-- <h6 class="dropdown-header center-sep">Space</h6>
+              <div class="dropdown-divider"></div> -->
+              <a class="dropdown-item" href="radhard.html">RAD-HARD | LEON3 OBC</a>
+              <a class="dropdown-item" href="openvpx.html">OpenVpx | LEON3 OBC</a>
+              <a class="dropdown-item" href="flyangela.html">CubeSat OBC</a>
+              <a class="dropdown-item" href="devkit.html">CubeSat Dev. KIT</a>
+              <div class="dropdown-divider m-0"></div>
+              <a class="dropdown-item" href="semiconductors.html">RAD-HARD Semiconductors</a>
+              <div class="dropdown-divider m-0"></div>
+              <a class="dropdown-item" href="itex.html">ITEX: Hi-TEMP Rugged ACQ</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="rdi" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">Spacecrafts</a>
+            <div class="dropdown-menu dropdown-primary pb-0" id="rdi-menu" aria-labelledby="rdi">
+              <a class="dropdown-item" href="freedomF1.html">FREEDOM F1</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="rdi" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">R&D+i</a>
+            <div class="dropdown-menu dropdown-primary pb-0" id="rdi-menu" aria-labelledby="rdi">
+              <a class="dropdown-item" href="capahard.html">Capability - Hard</a>
+              <a class="dropdown-item" href="capasoft.html">Capability - Soft</a>
+              <a class="dropdown-item" href="empleos.html">Examples</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contactb.html">Contact</a>
+          </li>
+          </ul>
+      </nav>
+      <section id="section" showpage="" style="padding-top:60px;"></section>  <!-- class="container-fluid h-100" -->
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+		<script type="text/javascript">
+    	$(document).ready(function() {
+			  $("#section").load("homeb.html")
+      });
+       $(".dropdown-toggle").on("click", function() {
+        if ($(this).parent().find(".dropdown-menu").css("display") == "block"){
+          $(this).parent().find(".dropdown-menu").toggle();
+        }else {
+          $('.dropdown-menu').css("display","none");
+          $(this).parent().find(".dropdown-menu").toggle();
+        }
+       });
+      $("#cssmenu a").each(function(){
+        var href = $(this).attr("href");
+        $(this).attr({ href: "#"});
+        $(this).click(function(){
+          $("#section").attr("showpage", href);
+          if ($(this).hasClass("dropdown-item") || href == "homeb.html" || href == "contactb.html"){
+            $('.dropdown-menu').css("display","none");
+          }
+          $("#section").load(href);
+          $('.navbar-collapse').collapse('hide');    
+        });
+      });
+     
+    </script>
+	</body>
+
+<!-- Mirrored from www.arsultra.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Mar 2026 23:31:42 GMT -->
+</html>

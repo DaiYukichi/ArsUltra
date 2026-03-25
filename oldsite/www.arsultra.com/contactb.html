@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="backimg">
+	
+<!-- Mirrored from www.arsultra.com/contactb.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Mar 2026 23:41:09 GMT -->
+<head>
+		<meta charset="utf-8">
+		<title>Contact</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+      .backimg {
+          background: url('fotos/universe.jpg') no-repeat center center fixed; 
+        }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130109256-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-130109256-1');
+    </script>
+	</head>
+	<body>
+    <div class="container-fluid mt-5">
+      <h3 class="text-center white-text ns">Contact</h3>
+      <div class="row">
+        <div class="col-md-6 pl-3 pt-5">
+          <label class="vf ns wow fadeInRight">Name *</label>
+          <div class="md-form form-sm mt-0 p-0">
+            <input type="text" class="form-control form-control-sm wow fadeIn" id="name" placeholder="Please, tell us your name..." style="color:#FFF" data-wow-delay="0.3s">
+          </div>
+          <label class="vf ns wow fadeInRight" data-wow-delay="0.1s">E-Mail *</label>
+          <div class="md-form form-sm mt-0 p-0">
+            <input type="email" class="form-control form-control-sm validate wow fadeIn" id="email" placeholder="Don't forget to check your address..." style="color:#FFF" data-wow-delay="0.6s">
+            <label for="email" data-error="wrong" data-success="thanks" style="font-style: italic;">must be a valid e-mail </label>
+          </div>
+          <label class="vf ns wow fadeInRight" data-wow-delay="0.2s">Subject *</label>
+          <div class="md-form form-sm mt-0 p-0">
+            <input type="text" class="form-control form-control-sm wow fadeIn" id="subject" placeholder="What is the subject?" style="color:#FFF" data-wow-delay="0.9s">
+            <!-- <label for="subject" data-error="too long" data-success="thanks" style="font-style: italic;">must be a valid e-mail </label> -->
+          </div>
+          <label class="vf ns wow fadeInRight" data-wow-delay="0.3s">Message *</label>
+          <textarea type="text" class="form-control wow fadeInUp" id="message" rows="10" placeholder="Write your message here..." data-wow-delay="1.1s"></textarea>
+          <!-- bottom panel -->
+          <div class="d-flex mb-3 wtxt align-items-center ns">
+            <div class="custom-control custom-checkbox mr-auto">
+              <input type="checkbox" class="custom-control-input" id="copycheck" checked>
+              <label class="custom-control-label negrita" for="copycheck">Send me a copy...</label>
+            </div>
+            <div class="mr-auto text-center p-2" id="infomsg" style="font-weight: bold; color:#33b5e5;"></div>
+            <button class="btn default-color mt-2 m-0" id="send" href="javascript:;" 
+            onclick="cargar($('#name').val(), $('#email').val(), $('#subject').val(), $('#message').val(),);return false;"
+            value="envia">Enviar</button>
+          </div>
+          <hr class="d-md-none mt-5" style="border-top: 1px solid #90caf9;"/>
+        </div> <!-- end of col -->
+        <div class="col-md-6 pr-3 mt-5" id="derecha" style="width:100%; height:500px;">
+          <img class="wow fadeIn" id="mapa" src="mapb.jpg" alt="" data-wow-delay="1.2s" style="border-radius: 7px; padding-bottom:12px;"/>
+          <p class="wtxt wow fadeIn" data-wow-delay="0.4s"><i class="fas fa-map-marker-alt"></i>  G.M. de Jovellanos 1425 Dto.9 / CABA - C.P: 1269, Bs. As. - Argentina.</p>
+          <p class="wtxt wow fadeIn" data-wow-delay="0.8s"><i class="fas fa-phone"></i> +54 (11) 4301-4988  /    <i class="far fa-envelope"></i>  <a href="mailto:info@arsultra.com.ar">info@arsultra.com.ar</a></p>
+          <div>
+            
+          </div>
+        </div> <!-- end of col -->
+      </div> <!-- end of row -->
+    </div> <!-- end of container -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        new WOW().init();
+      });
+      resizeMap = function() {
+        if ($(window).width() > 740) {
+          $('#mapa').css({ 'height' : '360px'});
+          $('#derecha').css({ 'padding-top' : '154px'});
+          $('#mapa').css({ 'padding-bottom' : '12px'});
+        } else {
+          $('#mapa').css({ 'height' : ''});
+          $('#derecha').css({ 'padding-top' : ''});
+          $('#mapa').css({ 'padding-bottom' : ''});
+        }
+      };
+      resizeMap();
+      $(window).on('resize', resizeMap);
+      function cargar(nameInfo, mailInfo, subjectInfo, messageInfo) {
+        if (nameInfo.length < 2 || mailInfo.length < 8 || subjectInfo.length < 2 ||  messageInfo.length < 3) {
+          alert("All are required and must be valid fields!");          
+        }
+        else {
+          var parametros = new FormData();
+          parametros.append('nameInfo', nameInfo);             
+          parametros.append('mailInfo', mailInfo);
+          parametros.append('subjectInfo', subjectInfo);
+          parametros.append('messageInfo', messageInfo);
+          if ($('#copycheck').prop("checked")) {
+            parametros.append('copyInfo', "copiar"); 
+          }
+          $.ajax({
+            url: 'sendmail.php',
+            data: parametros,
+            type: 'post',
+            cache: false,
+            contentType: false,
+            processData: false,
+            beforeSend: function () {
+              $("#infomsg").html("Sending, please wait...");
+            },
+            success: function (response) {
+              $("#infomsg").html(response);
+            }
+          });
+        }    
+      }
+    </script>
+	</body>
+
+<!-- Mirrored from www.arsultra.com/contactb.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Mar 2026 23:41:17 GMT -->
+</html>
