@@ -7,6 +7,7 @@
 
 import { getCurrentLang, translations } from '../core/translations';
 import { withBase, getRelativePath } from '../core/paths';
+import '../styles/navbar.css';
 
 /**
  * Initializes and injects the global navbar into #global-nav.
@@ -33,29 +34,32 @@ export function initNavbar() {
     const enLink = withBase(isEs ? currentPath.replace('/es', '') || '/' : currentPath);
     const esLink = withBase(isEs ? currentPath : `/es${currentPath}`);
 
-    nav.className = "fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl flex items-center gap-6 md:gap-12 transition-all duration-500 hover:border-orange-500/30";
-
     nav.innerHTML = `
-        <a href="${withBase(isEs ? '/es/' : '/')}" class="text-sm font-bold tracking-tighter text-white uppercase group">
-            Ars<span class="text-orange-500 group-hover:glow-orange transition-all">Ultra</span>
-        </a>
+        <a href="${withBase(isEs ? '/es/' : '/')}" class="nav-brand">Ars<span>Ultra</span></a>
 
-        <div class="flex gap-4 md:gap-8 text-[9px] uppercase tracking-[0.2em] font-bold text-slate-400">
-            <a href="${getLink('company')}" class="hover:text-white transition">${t.company[lang]}</a>
-            <a href="${getLink('systems')}" class="hover:text-white transition">${t.systems[lang]}</a>
-            <a href="${getLink('innovation')}" class="hover:text-white transition">${t.innovation[lang]}</a>
+        <div class="nav-links">
+            <a href="${getLink('company')}">${t.company[lang]}</a>
+            <a href="${getLink('systems')}">${t.systems[lang]}</a>
+            <a href="${getLink('innovation')}">${t.innovation[lang]}</a>
         </div>
 
-        <div class="flex items-center gap-4 border-l border-white/10 pl-6 md:pl-8">
-            <a href="${getLink('contact')}" class="text-[9px] uppercase tracking-[0.25em] font-black text-orange-500 hover:text-white transition">
-                ${t.inquiry[lang]}
-            </a>
-            
-            <div class="flex gap-2 mono text-[8px] font-bold">
-                <a href="${enLink}" class="${!isEs ? 'text-white' : 'text-slate-600'} hover:text-white transition">EN</a>
-                <span class="opacity-20">/</span>
-                <a href="${esLink}" class="${isEs ? 'text-white' : 'text-slate-600'} hover:text-white transition">ES</a>
+        <div class="nav-right">
+            <a href="${getLink('contact')}" class="nav-inquiry">${t.inquiry[lang]}</a>
+
+            <div class="nav-lang">
+                <a href="${enLink}" class="${isEs ? '' : 'is-active'}">EN</a>
+                <span class="sep">/</span>
+                <a href="${esLink}" class="${isEs ? 'is-active' : ''}">ES</a>
             </div>
         </div>
     `;
+
+    // Reveal only once content and fonts are in place, so the navbar never visibly resizes or moves on load.
+    const fontsReady = Promise.all([
+        document.fonts.load('700 9px Inter'),
+        document.fonts.load('700 9px "Roboto Mono"'),
+    ]).catch(() => {});
+    Promise.race([fontsReady, new Promise(resolve => setTimeout(resolve, 600))]).then(() => {
+        nav.classList.add('is-ready');
+    });
 }

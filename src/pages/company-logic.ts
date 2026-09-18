@@ -21,7 +21,7 @@ function renderCompany(lang: Language) {
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
                 <div>
                     <div class="mono text-[10px] text-orange-500 mb-6 tracking-[0.4em] uppercase font-bold italic">${t.strategy[lang]}</div>
-                    <h2 class="text-7xl font-black text-white mb-10 tracking-tighter uppercase italic">${businessData.title}</h2>
+                    <h2 class="text-5xl md:text-7xl font-black text-white mb-10 tracking-tighter uppercase italic">${businessData.title}</h2>
                     <p class="text-slate-400 text-2xl font-light mb-12 leading-tight">${businessData.description}</p>
                 </div>
                 <div class="space-y-4">
@@ -46,7 +46,7 @@ function renderCompany(lang: Language) {
             <div class="flex flex-col md:flex-row gap-20 items-center">
                 <div class="flex-1 space-y-8">
                     <div class="mono text-[10px] text-orange-500 mb-6 tracking-[0.4em] uppercase font-bold italic">${t.philosophy[lang]}</div>
-                    <h2 class="text-7xl font-black text-white mb-10 tracking-tighter uppercase italic">${identityData.title}</h2>
+                    <h2 class="text-5xl md:text-7xl font-black text-white mb-10 tracking-tighter uppercase italic">${identityData.title}</h2>
                     ${identityData.content.map(p => `<p class="text-slate-400 text-lg leading-relaxed font-light">${p}</p>`).join('')}
                 </div>
                 <div class="flex-1 relative group">
