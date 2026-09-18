@@ -2,6 +2,7 @@ import type { SatelliteComponent } from '../core/satellite_component';
 import type { Mission, Manifesto, Capability } from '../core/mission';
 import type { Language } from '../core/translations';
 import { translations } from '../core/translations';
+import { withBase } from '../core/paths';
 
 /**
  * UI COMPONENTS
@@ -15,7 +16,7 @@ import { translations } from '../core/translations';
 export function ProductCard(p: SatelliteComponent, lang: Language, isFeatured = false): string {
     const datasheetText = translations.systems.datasheet[lang];
     const viewSystemText = translations.systems.viewSystem[lang];
-    const systemsLink = lang === 'es' ? '/es/systems/' : '/systems/';
+    const systemsLink = withBase(lang === 'es' ? '/es/systems/' : '/systems/');
     
     const cardPadding = isFeatured ? 'p-12' : 'p-10';
     const titleSize = isFeatured ? 'text-4xl' : 'text-3xl';
@@ -33,7 +34,7 @@ export function ProductCard(p: SatelliteComponent, lang: Language, isFeatured = 
                 
                 ${p.imageUrl ? `
                     <div class="mb-8 rounded-lg overflow-hidden border border-white/5 group-hover:border-orange-500/20 transition-all duration-700">
-                        <img src="${p.imageUrl}" class="w-full aspect-video object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" alt="${p.name}">
+                        <img src="${withBase(p.imageUrl)}" class="w-full aspect-video object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" alt="${p.name}">
                     </div>
                 ` : ''}
 
@@ -53,7 +54,7 @@ export function ProductCard(p: SatelliteComponent, lang: Language, isFeatured = 
                     ${isFeatured 
                         ? `<a href="${systemsLink}" class="text-[10px] font-bold uppercase tracking-[0.2em] text-white hover:text-orange-500 transition">${viewSystemText}</a>`
                         : p.datasheetUrl 
-                            ? `<a href="${p.datasheetUrl}" download class="text-[9px] font-black uppercase tracking-[0.25em] text-white hover:text-orange-500 transition">${datasheetText}</a>`
+                            ? `<a href="${withBase(p.datasheetUrl)}" download class="text-[9px] font-black uppercase tracking-[0.25em] text-white hover:text-orange-500 transition">${datasheetText}</a>`
                             : `<button class="text-[9px] font-black uppercase tracking-[0.25em] text-white hover:text-orange-500 transition opacity-20 cursor-not-allowed">${datasheetText}</button>`
                     }
                 </div>
@@ -83,7 +84,7 @@ export function TimelineItem(m: Mission, isLast: boolean): string {
 
                 ${m.imageUrl ? `
                     <div class="w-48 aspect-video rounded-lg overflow-hidden border border-white/5 group-hover:border-orange-500/20 transition-all duration-500 hidden md:block">
-                        <img src="${m.imageUrl}" class="w-full h-full object-cover opacity-40 group-hover:opacity-100 group-hover:scale-110 transition duration-1000" alt="${m.name}">
+                        <img src="${withBase(m.imageUrl)}" class="w-full h-full object-cover opacity-40 group-hover:opacity-100 group-hover:scale-110 transition duration-1000" alt="${m.name}">
                     </div>
                 ` : ''}
             </div>
