@@ -1,6 +1,7 @@
 import { initNavbar } from '../components/navbar';
 import { initFooter } from '../components/footer';
 import { getCurrentLang, translations, type Language } from '../core/translations';
+import { withBase } from '../core/paths';
 import { ProductCard, TimelineItem } from '../components/ui';
 import { getFeaturedProducts } from '../data/systems';
 import { getMissions } from '../data/missions';
@@ -28,7 +29,7 @@ function renderHome(lang: Language) {
     const catalog = document.querySelector('.catalog-btn');
     if (catalog) {
         catalog.textContent = t.catalog[lang];
-        catalog.setAttribute('href', lang === 'es' ? '/es/systems/' : '/systems/');
+        catalog.setAttribute('href', withBase(lang === 'es' ? '/es/systems/' : '/systems/'));
     }
 }
 

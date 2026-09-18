@@ -5,6 +5,8 @@
  * object for all UI strings across the application.
  */
 
+import { getRelativePath } from './paths';
+
 export type Language = 'en' | 'es';
 
 /**
@@ -13,7 +15,7 @@ export type Language = 'en' | 'es';
  * @returns {Language} 'en' or 'es'
  */
 export const getCurrentLang = (): Language => {
-    return window.location.pathname.startsWith('/es') ? 'es' : 'en';
+    return getRelativePath().startsWith('/es') ? 'es' : 'en';
 };
 
 /**

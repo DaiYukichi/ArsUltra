@@ -1,6 +1,7 @@
 import { initNavbar } from '../components/navbar';
 import { initFooter } from '../components/footer';
 import { getCurrentLang, translations, type Language } from '../core/translations';
+import { withBase } from '../core/paths';
 import { ManifestoItem } from '../components/ui';
 import { getBusinessData, getIdentityData, getManifestoData } from '../data/company';
 
@@ -51,9 +52,9 @@ function renderCompany(lang: Language) {
                 <div class="flex-1 relative group">
                     <div class="aspect-square rounded-full border border-orange-500/20 flex items-center justify-center relative overflow-hidden">
                         <div class="absolute inset-0 bg-orange-500/5 rounded-full blur-3xl"></div>
-                        <img src="/images/identity.jpg" class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition duration-[2s]">
+                        <img src="${withBase('/images/identity.jpg')}" class="absolute inset-0 w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition duration-[2s]">
                         <div class="relative z-10 bg-slate-950/40 backdrop-blur-md p-10 rounded-full border border-white/10 group-hover:border-orange-500/30 transition duration-1000">
-                            <img src="/logo-h50.png" class="h-8 opacity-80 group-hover:glow-orange transition duration-1000">
+                            <img src="${withBase('/logo-h50.png')}" class="h-8 opacity-80 group-hover:glow-orange transition duration-1000">
                         </div>
                     </div>
                     <!-- Decorative Ring -->

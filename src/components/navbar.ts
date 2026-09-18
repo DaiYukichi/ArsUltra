@@ -6,6 +6,7 @@
  */
 
 import { getCurrentLang, translations } from '../core/translations';
+import { withBase, getRelativePath } from '../core/paths';
 
 /**
  * Initializes and injects the global navbar into #global-nav.
@@ -24,18 +25,18 @@ export function initNavbar() {
      * @returns {string} The localized URL.
      */
     const getLink = (path: string) => {
-        return isEs ? `/es/${path}/` : `/${path}/`;
+        return withBase(isEs ? `/es/${path}/` : `/${path}/`);
     };
-    
+
     // Switcher Logic: Replaces /es/ with / or vice-versa to toggle language on the current page.
-    const currentPath = window.location.pathname;
-    const enLink = isEs ? currentPath.replace('/es', '') : currentPath;
-    const esLink = isEs ? currentPath : `/es${currentPath}`;
+    const currentPath = getRelativePath();
+    const enLink = withBase(isEs ? currentPath.replace('/es', '') || '/' : currentPath);
+    const esLink = withBase(isEs ? currentPath : `/es${currentPath}`);
 
     nav.className = "fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-2 bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl flex items-center gap-6 md:gap-12 transition-all duration-500 hover:border-orange-500/30";
 
     nav.innerHTML = `
-        <a href="${isEs ? '/es/' : '/'}" class="text-sm font-bold tracking-tighter text-white uppercase group">
+        <a href="${withBase(isEs ? '/es/' : '/')}" class="text-sm font-bold tracking-tighter text-white uppercase group">
             Ars<span class="text-orange-500 group-hover:glow-orange transition-all">Ultra</span>
         </a>
 
